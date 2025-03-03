@@ -1,0 +1,20 @@
+sources:
+  - name: demo_src
+    database: dwh_flight
+    schema: demo_src
+    description: Данные из БД авиаперелётов
+    tables:
+      - name: boarding_passes
+        description: Посадочные талоны
+        columns:
+          - name: ticket_no
+            description: Номер билета
+          - name: flight_id
+            description: Номер рейса
+          - name: boarding_no
+            description: Номер посадочного талона
+          - name: seat_no
+            description: Место
+      - name: flights
+      - name: ticket_flights
+      - name: tickets
