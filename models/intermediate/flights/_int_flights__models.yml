@@ -1,0 +1,30 @@
+models:
+  - name: fct_bookings
+    description: Факты бронирований
+    docs:
+      show: true
+      node_color: red
+    config:
+      contract: {enforced: true}
+    meta:
+      owner: "pozdnyakowa.mariya@yandex.ru"
+      contact_tg: marusai6
+      status: in_dev
+    
+    columns:
+      - name: book_ref
+        data_type: varchar(8)
+        constraints:
+          - type: not_null
+      - name: book_date
+        data_type: timestamptz
+      - name: total_amount
+        data_type: numeric(10,2)
+        constraints:
+          - type: check
+            expression: "total_amount > 0"
+        tests: 
+          - not_null
+        meta:
+          owner: finance_team
+        quote: false

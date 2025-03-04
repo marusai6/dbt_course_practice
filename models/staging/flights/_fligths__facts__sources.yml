@@ -18,3 +18,4 @@ sources:
       - name: flights
       - name: ticket_flights
       - name: tickets
+      - name: bookings

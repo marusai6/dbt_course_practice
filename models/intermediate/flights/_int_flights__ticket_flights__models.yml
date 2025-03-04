@@ -1,0 +1,32 @@
+models:
+  - name: fct_ticket_flights
+    description: Данные по конкретному билету
+    docs:
+      show: true
+      node_color: green
+    config:
+      contract: {enforced: true}
+    meta:
+      owner: "pozdnyakowa.mariya@yandex.ru"
+    columns:
+      - name: ticket_no
+        data_type: character(13)
+        constraints:
+          - type: not_null
+      - name: flight_id
+        data_type: integer
+      - name: fare_conditions
+        data_type: varchar(10)
+      - name: amount
+        data_type: numeric(10,2)
+        constraints:
+          - type: check
+            expression: "amount > 0"
+      - name: boarding_pass_exists
+        data_type: boolean
+      - name: boarding_no
+        data_type: integer
+      - name: seat_no
+        data_type: varchar(4)
+      - name: load_date
+        data_type: date
