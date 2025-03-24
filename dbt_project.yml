@@ -32,5 +32,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_cource_practice:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    +meta:
+      year_created: 2025
+    staging:
+      +tags: "staging"
+    intermediate:
+      +tags: "intermediate"
